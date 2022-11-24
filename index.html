@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To-do list</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
+</head>
+
+<body onload="todoList()">
+    <div class="container">
+        <h1>My first todo list</h1>
+        <form class="todo-form">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for=" toDoValue" class="form-label">Task</label>
+                    <input type="text" class="form-control form-control-sm todo-input" id="toDoValue" />
+                    <button type="button" class="add-button" onclick="saveToLocalStorage()">Add</button>
+                </div>
+            </div>
+        </form>
+        <ul id="theta" class="todo-items">
+
+        </ul>
+    </div>
+</body>
+<script>
+    var todo = document.querySelector('.todo-form')
+    var todoInput = document.querySelector('.todo-input')
+    let id = localStorage.length + 1;
+
+
+    function todoList() {
+        if (localStorage.length != 0) {
+            const values = [];
+            let keys = Object.keys(localStorage);
+
+            let i = keys.length;
+            while (i--) {
+                let id = keys[i];
+                let value = localStorage.getItem(id);
+                document.getElementById("theta").innerHTML += `<div id ="frt"><li id = "horse"> ${value} </li> <button onclick="removeStorage(${id})">Close</button><button onclick="editStorage(${id})">Edit</button></div>`
+                //values.push(value);
+
+            }
+
+            /*values.forEach(element => {
+                  document.getElementById("theta").innerHTML += `<div id ="${id}"><li id = "horse"> ${element} </li> <button onclick="removeStorage(${id})">Close</button><button onclick="editStorage(${id})">Edit</button></div>`
+              });*/
+        }
+    }
+
+
+
+    function saveToLocalStorage() {
+        let tasks = document.getElementById("toDoValue").value;
+
+        if (tasks == "" || tasks == "undefined") {
+            alert("It can't be blank");
+            return;
+        }
+        if (tasks.length < 4) {
+            alert("Input more characters");
+            return;
+        }
+        let id = localStorage.length + 1;
+        localStorage.setItem(id, tasks);
+
+        alert("Saved");
+
+        document.getElementById("toDoValue").value = "";
+        document.getElementById("theta").innerHTML += `<div id="frt"><li class="cold">${tasks}</li> <button onclick="removeStorage(${id})">Close</button><button onclick="editStorage(${id})">Edit</button></div>`;
+
+    }
+
+    /* todoItems.addEventListener('click', function(event) {
+         removeStorage()
+     })*/
+    ;
+
+
+
+    function editStorage(id) {
+        
+        let taskContainer = document.getElementById("frt");
+        let tear = taskContainer.firstElementChild.textContent;
+        taskContainer.innerHTML = `<input id="gear" type="text" value="${tear}"/><button id="hacket" onclick="">Edit</button>`;
+        let hack = document.getElementById("hacket");
+        let bear = document.getElementById("gear");
+
+        hack.addEventListener('click', function(){
+       let harke = bear.value;
+        if(harke === ""){
+            alert('should not be empty');
+        }
+            localStorage.setItem(id, bear.value);
+            taskContainer.innerHTML = `<li class="cold">${harke}</li> <button onclick="removeStorage(${id})">Close</button><button onclick="editStorage(${id})">Edit</button>`;
+
+        })
+
+    }
+
+    function removeStorage(id) {
+        let taskContainer = document.getElementById(id);
+        taskContainer.remove();
+        localStorage.removeItem(id);
+
+
+
+    }
+
+
+</script>
+
+</html>
