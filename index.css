@@ -1,0 +1,196 @@
+body{
+    box-sizing: border-box;
+    
+}
+#header {
+    width: 100%;
+    height: 40px;
+    background-color: #db4c3f;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+    
+}
+
+#firstHeader{
+    margin-left:20px;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    
+}
+
+#secondHeader{
+    
+    
+    padding-top: 2px;
+}
+
+
+
+.headbutton{
+    border:none;
+    background-color:#db4c3f; 
+}
+.headbutton:hover{
+    background-color: #e27065;
+}
+
+
+.bodyContainer{
+   
+    
+    display: flex;
+    
+}
+
+.svgHeader{
+    color: white;
+}
+
+#leftMenu{
+    width: 0;
+   /* padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 10px;*/
+    height: calc(100vh - 44px);;
+   /* display: none;*/
+   overflow-x: hidden;
+    /*border: 1px solid yellow;*/
+    background-color: rgb(250 250 250);
+    transition: 0.5s;
+}
+#leftMenu_second{
+    
+    margin: 20px;
+}
+#leftMenu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#leftMenu ul li{
+    /*border: 1px solid black;*/
+    padding-top: 10px;
+}
+#leftMenu ul li a{
+    
+    /*border: 1px solid red;*/
+    margin-top: 10px;
+}
+#leftMenu ul li a span svg{
+    color: blue;
+}
+
+
+
+#closesign{
+    display: none;
+}
+
+label input{
+    border:none;
+    background-color: rgb(215 155 155 / 20%)
+}
+label{
+    border:none;
+    border-radius: 3px;
+    background-color: rgb(215 155 155 / 20%);
+}
+label:hover{
+    background-color: #ffff;
+}
+
+
+
+@media only screen and (max-width: 768px){
+    label input{
+        width: 0px;
+    }
+}
+
+#second_leftMenu{
+    margin-top: 30px;
+}
+.project{
+    flex-grow: 2;
+}
+#projectHeader{
+    display: flex;
+}
+#plusSign{
+    border: none;
+    
+    
+}
+#arrowDownSign{
+    border: none;
+    
+    
+}
+.Sign_svg{
+    background-color: none;
+}
+
+
+.container{
+    padding-top: 20px;
+    
+    /*border: 1px solid green;*/
+}
+#containerBody{
+    max-width: 800px;
+    margin: auto;
+   /* border: 1px solid red;*/
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.second_leftMenu, .project, .leftMenu_link{
+    font-family: var(--font-family-regular);
+    font-size: 13px;
+    text-decoration: none;
+    color: #202020;
+}
+
+#project_link{
+    text-decoration: none;
+    color: rgb(87, 83, 83);
+}
+
+.hoverable{
+    cursor: pointer;
+}
+
+.hoverable:hover{
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+#project_list{
+    display: block;
+    
+}
+
+.itemsOnList{
+    display: flex;
+    margin-top: 10px;
+}
+.bold{
+    flex-grow: 2;
+
+}
+.itemsOnList button{
+    border: none;
+    background-color: none;
+    font-size: small;
+}
+#add_button{
+    border-radius: 10%;
+    margin: 5px;
+    
+}
+#theta{
+    border-top: 1px solid rgb(238, 236, 236);
+    margin-top: 30px;
+}
